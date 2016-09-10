@@ -1,0 +1,5 @@
+uart0/1 is not working for rspi 3 B:
+
+the link below gives the reason:
+https://www.raspberrypi.org/forums/viewtopic.php?f=63&t=151454
+https://github.com/RPi-Distro/repo/issues/22
