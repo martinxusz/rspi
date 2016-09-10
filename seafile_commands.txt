@@ -1,0 +1,62 @@
+
+
+
+
+1.Starting Seafile Server and Seahub Website
+
+./seafile.sh start # Start seafile service
+./seahub.sh start <port>  # Start seahub website, port defaults to 8000
+
+2.Stop the seafile server
+./seahub.sh stop
+./seafile.sh stop
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+server name:            rspiCloud
+server ip/domain:       192.168.1.166
+
+seafile data dir:       /mnt/dsk1/rspi_cloud
+fileserver port:        8082
+
+database:               create new
+ccnet database:         ccnet-db
+seafile database:       seafile-db
+seahub database:        seahub-db
+database user:          root
+
+
+#restart mysql server
+sudo /etc/init.d/mysql restart
+#to allow access from any ip address
+GRANT ALL PRIVILEGES ON *.* TO 'myuser'@'%' IDENTIFIED BY 'mypassword' WITH GRANT OPTION;
+screen -S sessionname
+Ctrl+a Ctrl+d to detach
+screen -ls
+screen -r sessionname # to restore
