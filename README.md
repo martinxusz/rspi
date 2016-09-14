@@ -4,3 +4,6 @@ http://elinux.org/RPi_Easy_SD_Card_Setup
 
 rasppi beginner tutorial
 http://elinux.org/RPi_Beginners
+
+after os installed, the keyboard layout is not correct, use command below to setup to 101 Pc layout
+#sudo dpkg-reconfigure keyboard-configuration
