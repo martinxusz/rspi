@@ -7,3 +7,8 @@ http://elinux.org/RPi_Beginners
 
 after os installed, the keyboard layout is not correct, use command below to setup to 101 Pc layout
 #sudo dpkg-reconfigure keyboard-configuration
+
+
+#rspi and download
+Raspberry Pi技术笔记之四：使用aria2打造下载利器
+http://pagebrin.com/2014/04/raspberry-pi%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0%E4%B9%8B%E5%9B%9B%EF%BC%9A%E4%BD%BF%E7%94%A8aria2%E6%89%93%E9%80%A0%E4%B8%8B%E8%BD%BD%E5%88%A9%E5%99%A8/
