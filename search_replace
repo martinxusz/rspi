@@ -1,0 +1,44 @@
+#!/bin/bash
+ParamFile=property.file
+if [ ! -f $ParamFile ] ; then
+    echo
+    echo "Error: Unable to find parameter file $ParamFile"       
+	exit -1	
+fi
+param_count=`grep -v '^[ \t]*#' $ParamFile |wc -l`
+echo "$param_count Parameters found in $ParamFile"
+echo "Creatong a temporary file with the parameter list"
+touch $ParamFile.tmp
+if [ $? != 0 ] ; then
+    echo "Unable to crate the temporary file ...Exiting"
+    exit
+fi 
+grep -v '^[ \t]*#' $ParamFile > $ParamFile.tmp2
+grep -v '^$' $ParamFile.tmp2 > $ParamFile.tmp
+rm $ParamFile.tmp2
+while read LINE
+do
+    param_name=`echo  $LINE | cut -d'=' -f1`
+    param_value=`echo  $LINE | cut -d'=' -f2`
+    if [ -z $param_value ]; then
+        echo "Value not defined properly for $param_name ....Exiting"
+        exit
+    fi
+done < $ParamFile.tmp
+echo "Validation of param file Cparam_name=`echo  $LINE | cut -d'=' -f1`
+    param_value=`echo  $LINE | cut -d'=' -f2`
+    if [ -z $param_value ]; then
+        echo "Value not defined properly for $param_name ....Exiting"
+        exit
+    fi
+done < $ParamFile.tmp
+echo "Validation of param file Completed"
+
+cat $ParamFile.tmp  | sed 's/\\/\\\\\\\\/g' | sed 's/\//\\\\\//g' | sed 's/\*/\\\\\*/g' | sed 's/"/\"/g' | sed 's/\"/\\\\\"/g' | sed 's/\@/\\\\\@/g' > $ParamFile.tmp1
+
+mv $ParamFile.tmp1 $ParamFile.tmp
+FileName=$ParamFile.tmp
+
+
+
+
