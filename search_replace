@@ -25,13 +25,7 @@ do
         exit
     fi
 done < $ParamFile.tmp
-echo "Validation of param file Cparam_name=`echo  $LINE | cut -d'=' -f1`
-    param_value=`echo  $LINE | cut -d'=' -f2`
-    if [ -z $param_value ]; then
-        echo "Value not defined properly for $param_name ....Exiting"
-        exit
-    fi
-done < $ParamFile.tmp
+
 echo "Validation of param file Completed"
 
 cat $ParamFile.tmp  | sed 's/\\/\\\\\\\\/g' | sed 's/\//\\\\\//g' | sed 's/\*/\\\\\*/g' | sed 's/"/\"/g' | sed 's/\"/\\\\\"/g' | sed 's/\@/\\\\\@/g' > $ParamFile.tmp1
