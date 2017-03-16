@@ -1,0 +1,10 @@
+sqlplus -s usr/psw@DBinstance << EOF |& tee -a $LOGFILE
+set heading off
+set sqlnumber off
+set serveroutput on
+
+PROMPT 'LOADING TO PROCEDURE SP_procedure_name'
+EXEC  SP_procedure_name();
+PROMPT 'PROCEDURE SP_procedure_name LOADING FINISHED'
+
+EOF
