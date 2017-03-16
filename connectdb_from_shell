@@ -8,3 +8,15 @@ EXEC  SP_procedure_name();
 PROMPT 'PROCEDURE SP_procedure_name LOADING FINISHED'
 
 EOF
+
+
+#==========when exporting data use options below:
+set heading off
+set sqlprompt ""
+set sqlnumber off
+set serveroutput on
+SET FEEDBACK  OFF
+SET PAGESIZE  0
+SET LINESIZE 32000
+SET TAB OFF
+SET ARRAY 5000
