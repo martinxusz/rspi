@@ -1,0 +1,32 @@
+" This file will be loaded at the end of .vimrc.
+" This file is designed to add your own vim scripts or override the exVim's .vimrc settings.
+inoremap jj <ESC>
+
+"""""""""""""""""""""""""""""""""
+" map the shift-left to command Ctrl-W-Left
+" map the shift-right to command Ctrl-W-Right
+" nnoremap <S-LEFT> <C-W><LEFT>
+nnoremap [D <C-W><LEFT>
+nnoremap [C <C-W><RIGHT>
+nnoremap [A <C-W><UP>
+nnoremap [B <C-W><DOWN>
+"""""""""""""""""""""""""""""""""
+
+"""""""""""""""""""""""""""""""""
+" did this for python
+" vim python how to run current file
+" to access the current buffer's filename user %
+
+"set makeprg=python\ %
+" need to set commands above because already set in file
+" ~/.vim/bundle/ex-qfix/compiler/gulp.vim
+
+
+" auto save automatically before running the makeprg 
+set autowrite
+""""""""""""""""""""""""""""""""""
+" added on Fri 28 Apr 22:18:45 HKT 2017
+" Create a Shortcut to Mute Search Hightlighting
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+" the above command simulate the Ctrl + l command in bash
+"""""""""""""""""""""""""""""""""
