@@ -1,0 +1,14 @@
+
+https://martinfowler.com/articles/microservices.html
+
+0. origin from unix philosophy, simple is perfect.
+1. when changes happen, only part of service need to be change and redeployed by automation tools   
+2. service based, not component based, component offen refered to as library
+3. when separated into service, don't based on technology(such as front end, service-side, database, this will lead to traditional  application and one change in the code need to redploy entire application)   instead, based around business
+4. conway's law in 1967 (Melvyn Conway)
+5. products not projects
+6. Smart endpoints and dumb pipes (use simple MQ or Message Bus to comminucate)
+7. Decentralized Governance
+8. Decentralized Data Management
+9. Infrastructure Automation
+10. Design for failure11. Evolutionary Design
