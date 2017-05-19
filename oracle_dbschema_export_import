@@ -2,3 +2,18 @@
 --- drop all object in the schema TARGETSCHEMAselect 'drop '||object_type||' '|| owner || '.' || object_name||  DECODE(OBJECT_TYPE,'TABLE',' PURGE;',';')   from dba_objects  where owner in ('TARGETSCHEMA')/  
 purge recyclebin/
 --- import schema from SRCSCHEMA to TARGETSCHEMAimpdp \'/ as sysdba \' directory=WMSTARP1_MIG dumpfile=RITM0005885420_SRCSCHEMA_%U.dmp logfile=import_SRCSCHEMA.log remap_schemas=SRCSCHEMA:TARGETSCHEMA PARALLEL=10 table_exists_action=skip
+
+
+#run the sql script batch
+CONNECT SCHEMANAME/$$PASSWORD$$@DSTAD11B
+@ddl/rename_tables.sql
+@dml/mask_cid.sql
+@package/pckage.bdy
+@package/COMPILE_SCHEMA.sql
+
+
+#compile the schema COMPILE_SCHEMA.sql
+EXEC DBMS_UTILITY.compile_schema('SCHEMANAME',FALSE)/
+
+#replace file content
+perl -pi -e 's/SRCSTR/TARGETSTR/g' master.sql
