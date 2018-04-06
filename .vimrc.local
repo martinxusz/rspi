@@ -6,10 +6,15 @@ inoremap jj <ESC>
 " map the shift-left to command Ctrl-W-Left
 " map the shift-right to command Ctrl-W-Right
 " nnoremap <S-LEFT> <C-W><LEFT>
-nnoremap [D <C-W><LEFT>
-nnoremap [C <C-W><RIGHT>
-nnoremap [A <C-W><UP>
-nnoremap [B <C-W><DOWN>
+" nnoremap [D <C-W><LEFT>
+" nnoremap [C <C-W><RIGHT>
+" nnoremap [A <C-W><UP>
+" nnoremap [B <C-W><DOWN>
+
+" map the alt-left to command Ctrl-W-Left
+" map the alt-right to command Ctrl-W-Right
+nnoremap h <C-W><LEFT>
+nnoremap l <C-W><RIGHT>
 """""""""""""""""""""""""""""""""
 
 """""""""""""""""""""""""""""""""
